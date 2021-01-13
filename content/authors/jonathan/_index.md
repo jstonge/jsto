@@ -16,15 +16,19 @@ education:
   - course: M.A. Philosophy and cognitive science
     institution: Université du Québec à Montréal
     year: 2017
-  - course: B.A. in Psychology
+  - course: B.A. in Psychology (Behavioural Neuroscience, Cognition and Quantitive Methods)
     institution: McGill University
     year: 2015
+  - course: B.A. in Philosophy
+    institution: Montreal University
+    year: 2012
 email: ""
 highlight_name: false
 interests:
 - Natural language processing
-- Network Theory
+- Networks
 - Bayesian Modeling
+- Data visualization, visual essays, interactive articles
 organizations:
 - name: Centre Marc Bloch
   url: https://cmb.hu-berlin.de/
@@ -38,7 +42,7 @@ social:
   link: https://twitter.com/jonSO_
 - icon: graduation-cap
   icon_pack: fas
-  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
+  link: https://scholar.google.com/citations?user=j_EggN4AAAAJ&hl=en
 - icon: github
   icon_pack: fab
   link: https://github.com/jstonge
@@ -46,4 +50,4 @@ superuser: true
 title: Jonathan St-Onge
 ---
 
-I am interested in computational social science and programming. 
+I am currently doing an internship at Centre Marc Bloch in Berlin. I am interested in computational social science and literate programming. 
