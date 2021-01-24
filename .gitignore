@@ -4,3 +4,6 @@
 .Ruserdata
 .DS_Store
 Thumbs.db
+static/all_coauthorships_040121.tsv.gz
+static/all_journals_prep.tsv.gz
+static/all_networks_peixoto.csv
