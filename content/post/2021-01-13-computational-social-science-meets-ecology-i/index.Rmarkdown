@@ -6,7 +6,7 @@ slug: computational-social-science-meets-ecology-i
 categories: []
 tags: [computational social science, digital humanities]
 subtitle: ''
-summary: 'In this first blog post, we introduce the computational social science'
+summary: 'In this first blog post, we introduce computational social science'
 authors: []
 lastmod: '2021-01-13T14:43:52+01:00'
 featured: no
