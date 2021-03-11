@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>computational social science | Jonathan St-Onge</title>
+    <link>https://jstonge.netlify.app/tag/computational-social-science/</link>
+      <atom:link href="https://jstonge.netlify.app/tag/computational-social-science/index.xml" rel="self" type="application/rss+xml" />
+    <description>computational social science</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 13 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://jstonge.netlify.app/images/icon_huf2f1e8e863cdb3c95f377fcad6856f60_223273_512x512_fill_lanczos_center_2.png</url>
+      <title>computational social science</title>
+      <link>https://jstonge.netlify.app/tag/computational-social-science/</link>
+    </image>
+    
+    <item>
+      <title>Computational social science meets ecology I</title>
+      <link>https://jstonge.netlify.app/post/computational-social-science-meets-ecology-i/</link>
+      <pubDate>Wed, 13 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://jstonge.netlify.app/post/computational-social-science-meets-ecology-i/</guid>
+      <description>&lt;h2 id=&#34;what-is-computational-social-science&#34;&gt;What is computational social science?&lt;/h2&gt;
+&lt;p&gt;Broadly speaking, &lt;a href=&#34;https://en.wikipedia.org/wiki/Computational_social_science&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;computational social science&lt;/a&gt; (CSS) is an umbrella term for social scientists who started to use computational methods to analyze social phenomena through large-scale datasets (Lazer et al. 2009). The meaning of the &lt;em&gt;computational&lt;/em&gt; label in front of the social science can be found in the following description of the &lt;a href=&#34;https://computationalthinking.mit.edu/Fall20/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;computational thinking course&lt;/a&gt; offered at MIT:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is an introductory course on Computational Thinking. We use the &lt;a href=&#34;http://www.julialang.org&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Julia programming language&lt;/a&gt; to approach real-world problems in varied areas applying data analysis and computational and mathematical modeling. In this class you will learn computer science, software, algorithms, applications, and mathematics as an integrated whole.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Much to the dismay of those entering the field, CSS is really about combining domain expertise in one’s own discipline (which itself can be interdisciplinary), fluency in computational and mathematical modeling, and good programming practices in ways that actually answer relevant questions. Easy peasy. While it may seem overwhelming, there are now computational shortcuts to compensate for the lack of mathematical capabilities (knowing what is an integral is important, but knowing how to solve them is not absolutely necessary) and friendly online resources to start learning all of these skills.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Let me give you an example to make this whole CSS idea more concrete.&lt;/p&gt;
+&lt;h2 id=&#34;where-i-come-from&#34;&gt;Where I come from…&lt;/h2&gt;
+&lt;p&gt;I got into CSS from philosophy of science, where I collaborated on a project at the &lt;a href=&#34;https://chairephilosciences.uqam.ca/en/laps/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LAPS&lt;/a&gt; that sought to examine how the interests in our own field evolved through time. That is, we know that at some point we, as a field, were really into language and logic. Later on, different communities began to work on the &lt;a href=&#34;https://en.wikipedia.org/wiki/Problem_of_induction&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;problem of induction&lt;/a&gt; and the &lt;a href=&#34;https://en.wikipedia.org/wiki/Demarcation_problem&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;demarcation problem&lt;/a&gt;, and others got interested by &lt;a href=&#34;https://en.wikipedia.org/wiki/Philosophy_of_biology&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;biology&lt;/a&gt;, &lt;a href=&#34;https://plato.stanford.edu/entries/models-science/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;models&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/Philosophy_of_physics&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;physics&lt;/a&gt;, and the &lt;a href=&#34;https://en.wikipedia.org/wiki/Philosophy_of_mind&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;mind&lt;/a&gt;. But how exactly? Which journal in philosophy of science contributed the most to which part of the collective discussion? And to what extent our experience as embodied minds, shaped by particular institutions and influences, is reflective of the whole story? Are there some blind spots we fail to acknowledge?&lt;/p&gt;
+&lt;p&gt;To answer the question above, we &lt;a href=&#34;https://en.wikipedia.org/wiki/Web_scraping&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;scraped&lt;/a&gt; 8 key journals over 8 decades in Philosophy of Science. We pre-processed and cleaned the corpora to be in a &lt;a href=&#34;https://en.wikipedia.org/wiki/Machine-readable_data&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;machine-readable format&lt;/a&gt; (this is definitely more work than one might think at first glance, especially when you hire master students with no prior experience to do some of it 👋). We then examined how topics changed across time using techniques such as the &lt;a href=&#34;https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Latent Dirichlet Allocation&lt;/a&gt;. Informally, topics are hidden variables that impose order on a constellation of words. For example, &lt;em&gt;human&lt;/em&gt;, &lt;em&gt;genome&lt;/em&gt;, &lt;em&gt;dna&lt;/em&gt; and &lt;em&gt;genetic&lt;/em&gt; all make sense under the banner &lt;em&gt;Genetics&lt;/em&gt;. Importantly, topics are said to be latent because they are never observed.&lt;/p&gt;
+&lt;p&gt;All in all, one way to summarize how the interests of philosophers changed in the last 8 decades is with the following figure:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;malaterre2020_fig2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In this figure, the colors represent 25 topics found between 1934 and 2017, and the area is proportional to the space occupied by the topics with respect to the whole discussion at that particular time (with the number of articles as dotted lines). For example, between 1946 and 1949, much of the discussion was about philosophy itself (by that we mean traditional philosophy or history of philosophy) and language, while in the 2000s the discussion is much more segregated and focused on specific disciplines. In the legend, we can also see that topics themselves are clustered in meta-communities (as shown by the cluster letters). If you would like to learn more about this project, please see our article &lt;a href=&#34;https://link.springer.com/article/10.1007/s11229-020-02915-6&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Eight journals over eight decades: a computational topic-modeling approach to contemporary philosophy of science&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This is a typical example of what we do in CSS. We (philosophers, who are not particularly recognized for their use of coding in the field) analyzed a large-scale dataset to answer questions motivated by philosophy of science, and, in this case, is about philosophy of science.&lt;/p&gt;
+&lt;h2 id=&#34;wait-what-i-just-described-isnt-that-digital-humanities&#34;&gt;Wait. What I just described. Isn’t that digital humanities?&lt;/h2&gt;
+&lt;p&gt;Are CSS and &lt;a href=&#34;https://en.wikipedia.org/wiki/Digital_humanities&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;digital humanities&lt;/a&gt; (DH) the same? Well, yes and no. Yes because the above CSS definition can and do certainly apply to DH. Moreover, in french-speaking world, it seems the most common translation of computational social science is digital humanities (&lt;em&gt;les humanités numériques&lt;/em&gt;). At the same time, I can think of at least three main differences between DH and CSS:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;(i) type of data under study:&lt;/code&gt; As opposed to computational social scientists who tend to analyze contemporary text data that originate from our digital traces, digital humanists analyze cultural artifacts of all shapes and sizes with books, letters, maps, historical documents, paintings and other works of art of all kinds we find in museums and archives. As such, digital humanists are much more engaged with domain-specific data who require particular knowledge and often has been neglected by computer scientists who lack this knowledge.&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; It is not to say that computational social scientists never study books or manuscript letters, but I find it a useful rule of thumbs to distinguish the two.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;(ii) authors background:&lt;/code&gt; Digital humanists are, well, from the humanities. Looking at the many scholars participating to the ongoing book &lt;a href=&#34;https://dhdebates.gc.cuny.edu/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Debates in the Digital Humanities&lt;/a&gt;, we mostly find English teachers, librarians, historians, and digital media researchers. Although I might be wrong, I think this is representative of the field. CSS seems to have inherited the physics-minded people. And in my view this is the distinguishing feature between DH and CSS. In a seminal paper of the field, &lt;em&gt;Life in the network: the coming age of computational social science&lt;/em&gt; (Lazer et al. 2009), we have computer scientists, physicists, political scientists, and sociologists discussing social physics. As a result, we find that the former group rarely use mathematical modeling and simulation to study social phenomena, while the latter tend to see people, and all of their history, as points in space.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;(iii) how the field came to be:&lt;/code&gt; Finally, a simple way to find out if you are doing DH or CSS is to simply ask people around you who they think are the main players in their field. If the answer has something to do with the Santa Fe institute, you are doing CSS. If the answer directs you to an essay, you are in DH.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This distinction is most certainly an oversimplification. A case in point, this &lt;a href=&#34;https://academic.oup.com/dsh/article/34/3/616/5161109?login=true&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;article&lt;/a&gt; suggests that DH can at least be understood in 3 different ways. In any case, I hope you’ll find the above distinction useful. Feel free to disagree and send me articles to correct my view.&lt;/p&gt;
+&lt;p&gt;In this first blog post, I introduced the first half of the title. In the next one, we’ll go over how computational social science can provide interesting insights to practitioners in science. In this case, ecologists.&lt;/p&gt;
+&lt;h2 id=&#34;css-resources&#34;&gt;CSS resources&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Chris Bail (Duke University - Political scientist): &lt;a href=&#34;https://cbail.github.io/textasdata/Text&#34;&gt;https://cbail.github.io/textasdata/Text&lt;/a&gt;_as_Data.html&lt;/li&gt;
+&lt;li&gt;Pedro Smaldino (UCMerced - Cultural Evolutionist): &lt;a href=&#34;http://www.dysoc.org/cesmodules/social&#34;&gt;http://www.dysoc.org/cesmodules/social&lt;/a&gt;_dynamics_module/&lt;/li&gt;
+&lt;li&gt;Scott Page (UMichigan - Economists): &lt;a href=&#34;https://www.coursera.org/learn/model-thinking&#34;&gt;https://www.coursera.org/learn/model-thinking&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Julia Silge &amp;amp; David Robinson Tidytext book: &lt;a href=&#34;https://www.tidytextmining.com/index.html&#34;&gt;https://www.tidytextmining.com/index.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Quanteda Text Analysis with R for Students of Literature (Kennett Benoit et al.): &lt;a href=&#34;https://quanteda.io/articles/pkgdown/replication/digital-humanities.html&#34;&gt;https://quanteda.io/articles/pkgdown/replication/digital-humanities.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;reference&#34;&gt;Reference&lt;/h2&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references hanging-indent&#34;&gt;
+&lt;div id=&#34;ref-lazer_social_2009&#34;&gt;
+&lt;p&gt;Lazer, D., A. Pentland, L. Adamic, S. Aral, A.-L. Barabasi, D. Brewer, N. Christakis, et al. 2009. “SOCIAL SCIENCE: Computational Social Science.” &lt;em&gt;Science&lt;/em&gt; 323 (5915): 721–23. &lt;a href=&#34;https://doi.org/10.1126/science.1167742&#34;&gt;https://doi.org/10.1126/science.1167742&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;For those who are interested, there are some great CSS resources at the end of the post &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;For a good example of what I mean by that, check out &lt;a href=&#34;https://www.jessesadler.com/post/my-approach-to-dh/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;historian Jesse’s Sadler Blog&lt;/a&gt; &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

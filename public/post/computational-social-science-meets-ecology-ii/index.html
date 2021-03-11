@@ -1,0 +1,1123 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  
+  
+  <meta name="generator" content="Wowchemy 5.0.0-beta.1 for Hugo">
+  
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Jonathan St-Onge">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Current plan for the series (preliminary):
+ Computational social science meets ecology I : what is CSS CSS meets ecology II Social structure I : coauthorship networks within journal Social structure II : coauthorship networks across journals Informational structure I : title dynamics Informational structure II : the mandatory topic modeling Informational structure III : going full transformers Informational structure IV : models phylogeny  CSS meets ecology In the last post, I talked about philosophers of science research agenda over the last 8 decades.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://jstonge.netlify.app/post/computational-social-science-meets-ecology-ii/">
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#06805E">
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/tomorrow.min.css" crossorigin="anonymous" title="hl-light">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/tomorrow.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js" integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg==" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i%7CLora:400,400i,700,700i%7CBodoni+Moda&display=swap">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.1bed12ae9db982e6c0554eda37347edf.css">
+
+  
+
+
+
+
+  
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_huf2f1e8e863cdb3c95f377fcad6856f60_223273_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_huf2f1e8e863cdb3c95f377fcad6856f60_223273_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://jstonge.netlify.app/post/computational-social-science-meets-ecology-ii/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:site" content="@jonSO_">
+  <meta property="twitter:creator" content="@jonSO_">
+  
+  <meta property="og:site_name" content="Jonathan St-Onge">
+  <meta property="og:url" content="https://jstonge.netlify.app/post/computational-social-science-meets-ecology-ii/">
+  <meta property="og:title" content="Computational social science meets ecology II | Jonathan St-Onge">
+  <meta property="og:description" content="Current plan for the series (preliminary):
+ Computational social science meets ecology I : what is CSS CSS meets ecology II Social structure I : coauthorship networks within journal Social structure II : coauthorship networks across journals Informational structure I : title dynamics Informational structure II : the mandatory topic modeling Informational structure III : going full transformers Informational structure IV : models phylogeny  CSS meets ecology In the last post, I talked about philosophers of science research agenda over the last 8 decades."><meta property="og:image" content="https://jstonge.netlify.app/images/icon_huf2f1e8e863cdb3c95f377fcad6856f60_223273_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="https://jstonge.netlify.app/images/icon_huf2f1e8e863cdb3c95f377fcad6856f60_223273_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2021-01-24T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2021-01-24T02:18:10&#43;01:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jstonge.netlify.app/post/computational-social-science-meets-ecology-ii/"
+  },
+  "headline": "Computational social science meets ecology II",
+  
+  "datePublished": "2021-01-24T00:00:00Z",
+  "dateModified": "2021-01-24T02:18:10+01:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Jonathan St-Onge"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jonathan St-Onge",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jstonge.netlify.app/images/icon_huf2f1e8e863cdb3c95f377fcad6856f60_223273_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "Current plan for the series (preliminary):\n Computational social science meets ecology I : what is CSS CSS meets ecology II Social structure I : coauthorship networks within journal Social structure II : coauthorship networks across journals Informational structure I : title dynamics Informational structure II : the mandatory topic modeling Informational structure III : going full transformers Informational structure IV : models phylogeny  CSS meets ecology In the last post, I talked about philosophers of science research agenda over the last 8 decades."
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Computational social science meets ecology II | Jonathan St-Onge</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper  ">
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.25bb65fc185bceea61395d5b0560127a.js"></script>
+
+  
+
+<aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
+        
+      </div>
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Jonathan St-Onge</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/about"><span>About</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/post"><span>Blog</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/projects"><span>Project</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/cv"><span>CV</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Computational social science meets ecology II</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Jan 24, 2021
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    7 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+  
+  <div class="article-container">
+    
+    <div class="row">
+    
+    <div class="col-12 col-lg-10ish article-style">
+      <!-- **Goals of this post** -->
+<!-- - `Definitional:` What is computational social science -->
+<!-- - Introduce my goals for this oncoming post series, aka why this blog might be of interest to you: -->
+<!--    - `CSS meets ecology:` To motivate CSS potential contribution to practitioners, in this case ecologists -->
+<!--    - `Codes and methods clearly explained:` Show and explain the methodology used in CSS -->
+<!--    - `Theoretical aspiration:` To develop a theory of how social relationships and modeling practices co-evolve in ecology -->
+<p>Current plan for the series (preliminary):</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Computational social science meets ecology I : what is CSS</li>
+<li><input disabled="" type="checkbox"> CSS meets ecology II</li>
+<li><input disabled="" type="checkbox"> Social structure I : coauthorship networks within journal</li>
+<li><input disabled="" type="checkbox"> Social structure II : coauthorship networks across journals</li>
+<li><input disabled="" type="checkbox"> Informational structure I : title dynamics</li>
+<li><input disabled="" type="checkbox"> Informational structure II : the mandatory topic modeling</li>
+<li><input disabled="" type="checkbox"> Informational structure III : going full transformers</li>
+<li><input disabled="" type="checkbox"> Informational structure IV : models phylogeny</li>
+</ul>
+<h2 id="css-meets-ecology">CSS meets ecology</h2>
+<p>In the last post, I talked about philosophers of science research agenda over the last 8 decades. But why do we care about that? More importantly, why practitioners in other fields, say ecology, might care about this kind of inquiry?</p>
+<h2 id="the-science-of-science-perspective">The Science of science perspective</h2>
+<p>CSS can be motivated from a science of science perspective [scisci; @fortunato_science_2018]. Scisci is in a sense more concrete than CSS; it seeks to study the structure and evolution of science itself through networks and other tools from complex science. It tackles questions on career dynamics (who publish what at what age or career stage), universal laws in citation patterns, the impact of team size on the type of science being done, how scientists select what they want to work on, and so on. Of interest is how they define science:</p>
+<blockquote>
+<p>Science can be described as a complex, self-organizing, and evolving network of <em>scholars</em>, <em>projects</em>, <em>papers</em>, and <em>ideas</em>. [@fortunato_science_2018]</p>
+</blockquote>
+<p>Thus, a second objective of this series is to flesh out the multilayer network of scholars, papers, institutions, ideas, <em>and models</em> in ecology to provide useful insights to practitioners as to where particular ideas and modeling practices come from. I hope to show that this is useful to <em>validate</em> practitioners intuitions about their ideas, but also that it has the potential to <em>provide new insights</em> on how to navigate the complex sociocultural networks that surround them.</p>
+<p>Before going any further, why ecology? During my master, I became interested in ecology for its role in the evolution of modeling in science. Ever since the 50s and 60s, ecology positioned itself has a pioneering field in the study of complex systems using models, i.e. simplified but useful and multifunctional representations/descriptions/approximations (pick one) of latent phenomena in the world. This step, to see models as a valid means to study complex systems, is a major leap in science. Before that, models weren&rsquo;t seen as an end in themselves but as a temporary step towards developing physic-like theories [@morgan_models_1999, ch.3]. An illustrative passage that shows this change of mind can be found in Joan Roughgarden&rsquo;s <em>Primer of Ecological Theory</em>, where she describes the necessary trade-off between simplicity and details in modeling:</p>
+<blockquote>
+<p>If you&rsquo;re a physicist, talks about kinds of models, and negotiations between simplicity and detail, seems strange indeed. One doesn&rsquo;t negotiate about <em>F = ma</em> or the laws of thermodynamics. So ecology is different and it&rsquo;s a good idea to accept this now. For the most part, mathematical models in ecology are not foundational, they are supplemental, and judged by their utility. [@roughgarden_primer_1998]</p>
+</blockquote>
+<p>Something has changed with the practice of modeling in ecology. I feel that ecology made us more comfortable with the idea that an approximate representation of the world might be good enough. Echoing philosopher William C. Wimsatt, ecologists were among the first to methodologically embrace the fact that we are limited beings in a very complex world, and that models might be our best shot at representing reality [see @wimsatt_re-engineering_2007 for more on how we are limited beings]. Anyway, one key objective of this series of posts will be to better understand the coevolution of modeling practices and social structure, e.g. how socio-technical environments influence the practice of modeling, from their interpretations to the types of models we use, and, in turn, how modeling influence the fabric of social interactions when we do science.</p>
+<p>Now, all of this will require some data.</p>
+<h2 id="show-me-what-you-got">Show me what you got</h2>
+<p><a href="jstor.org/dfr/">JSTOR Data for Research (DfR)</a> is a large database that contains over 12 million academic journal articles. Among these journals, some of them are ecology-related. What ecology-related journals do JSTOR DfR have? Starting from the premise that science is a network of authors, papers, institutions, and ideas, we circumscribe the scope of our investigation to the journals published by the main ecological societies, namely <a href="https://esajournals.onlinelibrary.wiley.com/" target="_blank" rel="noopener">Ecological Society of America</a>, <a href="https://besjournals.onlinelibrary.wiley.com/" target="_blank" rel="noopener">British Ecological Society</a>, <a href="https://www.oikosjournal.org/" target="_blank" rel="noopener">Oikos</a>, and the <a href="https://www.amnat.org/home.html" target="_blank" rel="noopener">American Society of Naturalists</a>.</p>
+<p>Additionally, we consider well-known journals such as <a href="https://www.sciencemag.org/journal-category/ecology" target="_blank" rel="noopener">Science</a>, <a href="https://www.pnas.org/ecology" target="_blank" rel="noopener">Proceedings of the National Academy of Science</a> and <a href="https://royalsocietypublishing.org/toc/rspb/current" target="_blank" rel="noopener">The Royal Society</a> that are known to publish ecological content. We use the category by JSTOR DfR to identify the articles within these journals that are related to ecology.</p>
+<p>There are some journals we are unclear if we should keep or not. For example, is the <code>Journal of Biogeography</code> part of ecology? On their website, editors claim that the journal lies at the intersection of biology and geography. Ecology being part of biology, then the journal is partly ecology, right? Well, I am not so sure. Biology today covers many scales and different worldviews. Thus, saying that a journal is in biology does not imply that it is ecology. But we know that some famous insular biogeographers, such as Robert MacArthur, are also well-known ecologists. Instead of settling for a yes and no answer, for now we are keeping the <code>Journal of Biogeography</code> for experimentation. We will seek to find ways to empirically assess whether, or to what extent, a journal is or is not related to ecology.</p>
+<p>Given the above criteria, JSTOR DfR have 17 ecology-related journals:</p>
+<p><img src="https://jstonge.netlify.app/post/computational-social-science-meets-ecology-ii/index_files/figure-html/plot_count_articles-1.png" width="2340" /></p>
+<p>Our corpus contains 17 journals from two databases (<a href="https://www.portico.org" target="_blank" rel="noopener">Portico</a> and <a href="jstor.org/">JSTOR</a>), and have very different life spans and volume of published articles. For later use, I represent the number of articles for which we have abstracts as shaded bars. We can see that most often we miss more contemporary abstracts because the Portico database doesn&rsquo;t seem to have done such as good job capturing them.</p>
+<p>Let&rsquo;s take a closer look at the data by <code>glimpsing</code> at it:</p>
+<pre><code>Rows: 106,852
+Columns: 15
+$ id          &lt;chr&gt; &quot;http://www.jstor.org/stable/4599110&quot;, &quot;http://www.jstor.…
+$ title       &lt;chr&gt; &quot;the behavioral ecology of mating in harvester ants (hyme…
+$ pub_year    &lt;dbl&gt; 1976, 1976, 1976, 1976, 1976, 1976, 1976, 1976, 1976, 197…
+$ abstract    &lt;chr&gt; &quot;1. The four sympatric species of Pogonomyrmex (P. barbat…
+$ date        &lt;date&gt; 1976-01-01, 1976-01-01, 1976-01-01, 1976-01-01, 1976-01-…
+$ url         &lt;chr&gt; &quot;http://www.jstor.org/stable/4599110&quot;, &quot;http://www.jstor.…
+$ publisher   &lt;chr&gt; &quot;Springer&quot;, &quot;Springer&quot;, &quot;Springer&quot;, &quot;Springer&quot;, &quot;Springer…
+$ authors     &lt;chr&gt; &quot;bert_holldobler&quot;, &quot;bert_holldobler&quot;, &quot;edward_o_wilson&quot;, …
+$ jn_title    &lt;chr&gt; &quot;Behavioral Ecology and Sociobiology&quot;, &quot;Behavioral Ecolog…
+$ identifiers &lt;chr&gt; &quot;[{'name': 'issn', 'value': '03405443'}, {'name': 'local_…
+$ wc          &lt;dbl&gt; 7044, 16383, 8060, 6526, 9654, 13382, 9032, 6939, 13145, …
+$ doi         &lt;chr&gt; &quot;10.2307/4599110&quot;, &quot;10.2307/4599087&quot;, &quot;10.2307/4599089&quot;, …
+$ timestamp   &lt;dbl&gt; 189302400, 189302400, 189302400, 189302400, 189302400, 18…
+$ half_decade &lt;dbl&gt; 1975, 1975, 1975, 1975, 1975, 1975, 1975, 1975, 1975, 197…
+$ doc_id      &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17…
+</code></pre>
+<p>Each row is an article, meaning that we have 106,850 articles in our dataset. That said, what count as an article? Do <code>editorial</code>, <code>preface</code>, or <code>erratum</code> count as articles? For now, we will just consider everything as an article. Anyway, we can see that for each article we have its <code>id</code> (provided by JSTOR), <code>title</code>, <code>pub_year</code>, <code>abstract</code>, <code>publisher</code>, <code>jn_title</code>, <code>authors</code>, <code>wc</code> (e.g. word count of the article), <code>doi</code> (extracted from the various identifiers), <code>doc_id</code> (our own custom id we will use as unique identifiers), and so on.</p>
+<p>From the given word count, we calculate that our corpus is around 656 million words. We do not have directly access to all these words, though. To access the full text, one must first take an arrangement with the JSTOR DfR team. And that is exactly what I did for my master thesis. My interaction with them was nice, and within a few weeks they gave me access to over 13G of text data. Unfortunately, you get the raw data from their Optical Character Recognition (OCR) algorithm, ran over their PDFs of varying shape and quality. To be honest, to clean that up is a mess and something I will keep for a later post. This is why we begin with exploring something nice and easy in the next post, namely the social structure hidden in coauthorship networks.</p>
+<p>On that, thanks for reading this introductory post and I will see you later!</p>
+
+    </div>
+    
+    <div class="col-12 col-lg-2ish docs-toc">
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+      </ul>
+
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#css-meets-ecology">CSS meets ecology</a></li>
+    <li><a href="#the-science-of-science-perspective">The Science of science perspective</a></li>
+    <li><a href="#show-me-what-you-got">Show me what you got</a></li>
+  </ul>
+</nav>
+
+      
+    </div>
+  </div>
+    <div class="col-12 col-lg-10ish article-style">
+    <script src="https://utteranc.es/client.js"
+        repo="rbind/apreshill"
+        issue-term="title"
+        label="comments :crystal_ball:"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+    </div>
+  
+
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://jstonge.netlify.app/post/computational-social-science-meets-ecology-ii/&amp;text=Computational%20social%20science%20meets%20ecology%20II" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://jstonge.netlify.app/post/computational-social-science-meets-ecology-ii/&amp;t=Computational%20social%20science%20meets%20ecology%20II" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Computational%20social%20science%20meets%20ecology%20II&amp;body=https://jstonge.netlify.app/post/computational-social-science-meets-ecology-ii/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://jstonge.netlify.app/post/computational-social-science-meets-ecology-ii/&amp;title=Computational%20social%20science%20meets%20ecology%20II" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Computational%20social%20science%20meets%20ecology%20II%20https://jstonge.netlify.app/post/computational-social-science-meets-ecology-ii/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://jstonge.netlify.app/post/computational-social-science-meets-ecology-ii/&amp;title=Computational%20social%20science%20meets%20ecology%20II" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://jstonge.netlify.app"><img class="avatar mr-3 avatar-circle" src="/author/jonathan-st-onge/avatar_hu9340be3e63b68b9c2e07ec66d9edef74_798927_270x270_fill_q75_lanczos_center.jpg" alt="Jonathan St-Onge"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://jstonge.netlify.app">Jonathan St-Onge</a></h5>
+      <h6 class="card-subtitle">Intern CMB Computational Social Science team</h6>
+      <p class="card-text">A former philosopher of science and cognitive scientist, Jonathan St-Onge now purses his interest in computational social science.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/jonSO_" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=j_EggN4AAAAJ&amp;hl=en" target="_blank" rel="noopener">
+        <i class="fas fa-graduation-cap"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/jstonge" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+    Published with
+    <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a>  —
+    the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">
+    open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/latex.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'event' : "Events",
+        'slides' : "Slides"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/js/wowchemy.min.572b7caf7fe601716a0f74d67d754c21.js"></script>
+
+    
+
+
+
+
+
+
+</body>
+</html>

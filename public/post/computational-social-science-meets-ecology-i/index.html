@@ -1,0 +1,1119 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  
+  
+  <meta name="generator" content="Wowchemy 5.0.0-beta.1 for Hugo">
+  
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Jonathan St-Onge">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="In this first blog post, we introduce computational social science">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://jstonge.netlify.app/post/computational-social-science-meets-ecology-i/">
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#06805E">
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/tomorrow.min.css" crossorigin="anonymous" title="hl-light">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/tomorrow.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js" integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg==" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i%7CLora:400,400i,700,700i%7CBodoni+Moda&display=swap">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.1bed12ae9db982e6c0554eda37347edf.css">
+
+  
+
+
+
+
+  
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_huf2f1e8e863cdb3c95f377fcad6856f60_223273_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_huf2f1e8e863cdb3c95f377fcad6856f60_223273_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://jstonge.netlify.app/post/computational-social-science-meets-ecology-i/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:site" content="@jonSO_">
+  <meta property="twitter:creator" content="@jonSO_">
+  
+  <meta property="og:site_name" content="Jonathan St-Onge">
+  <meta property="og:url" content="https://jstonge.netlify.app/post/computational-social-science-meets-ecology-i/">
+  <meta property="og:title" content="Computational social science meets ecology I | Jonathan St-Onge">
+  <meta property="og:description" content="In this first blog post, we introduce computational social science"><meta property="og:image" content="https://jstonge.netlify.app/images/icon_huf2f1e8e863cdb3c95f377fcad6856f60_223273_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="https://jstonge.netlify.app/images/icon_huf2f1e8e863cdb3c95f377fcad6856f60_223273_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2021-01-13T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2021-01-13T14:43:52&#43;01:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jstonge.netlify.app/post/computational-social-science-meets-ecology-i/"
+  },
+  "headline": "Computational social science meets ecology I",
+  
+  "datePublished": "2021-01-13T00:00:00Z",
+  "dateModified": "2021-01-13T14:43:52+01:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Jonathan St-Onge"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jonathan St-Onge",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jstonge.netlify.app/images/icon_huf2f1e8e863cdb3c95f377fcad6856f60_223273_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "In this first blog post, we introduce computational social science"
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Computational social science meets ecology I | Jonathan St-Onge</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper  ">
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.25bb65fc185bceea61395d5b0560127a.js"></script>
+
+  
+
+<aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
+        
+      </div>
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Jonathan St-Onge</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/about"><span>About</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/post"><span>Blog</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/projects"><span>Project</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/cv"><span>CV</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Computational social science meets ecology I</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Jan 13, 2021
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    6 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+  
+  <div class="article-container">
+    
+    <div class="row">
+    
+    <div class="col-12 col-lg-10ish article-style">
+      <h2 id="what-is-computational-social-science">What is computational social science?</h2>
+<p>Broadly speaking, <a href="https://en.wikipedia.org/wiki/Computational_social_science" target="_blank" rel="noopener">computational social science</a> (CSS) is an umbrella term for social scientists who started to use computational methods to analyze social phenomena through large-scale datasets (Lazer et al. 2009). The meaning of the <em>computational</em> label in front of the social science can be found in the following description of the <a href="https://computationalthinking.mit.edu/Fall20/" target="_blank" rel="noopener">computational thinking course</a> offered at MIT:</p>
+<blockquote>
+<p>This is an introductory course on Computational Thinking. We use the <a href="http://www.julialang.org" target="_blank" rel="noopener">Julia programming language</a> to approach real-world problems in varied areas applying data analysis and computational and mathematical modeling. In this class you will learn computer science, software, algorithms, applications, and mathematics as an integrated whole.</p>
+</blockquote>
+<p>Much to the dismay of those entering the field, CSS is really about combining domain expertise in one’s own discipline (which itself can be interdisciplinary), fluency in computational and mathematical modeling, and good programming practices in ways that actually answer relevant questions. Easy peasy. While it may seem overwhelming, there are now computational shortcuts to compensate for the lack of mathematical capabilities (knowing what is an integral is important, but knowing how to solve them is not absolutely necessary) and friendly online resources to start learning all of these skills.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p>Let me give you an example to make this whole CSS idea more concrete.</p>
+<h2 id="where-i-come-from">Where I come from…</h2>
+<p>I got into CSS from philosophy of science, where I collaborated on a project at the <a href="https://chairephilosciences.uqam.ca/en/laps/" target="_blank" rel="noopener">LAPS</a> that sought to examine how the interests in our own field evolved through time. That is, we know that at some point we, as a field, were really into language and logic. Later on, different communities began to work on the <a href="https://en.wikipedia.org/wiki/Problem_of_induction" target="_blank" rel="noopener">problem of induction</a> and the <a href="https://en.wikipedia.org/wiki/Demarcation_problem" target="_blank" rel="noopener">demarcation problem</a>, and others got interested by <a href="https://en.wikipedia.org/wiki/Philosophy_of_biology" target="_blank" rel="noopener">biology</a>, <a href="https://plato.stanford.edu/entries/models-science/" target="_blank" rel="noopener">models</a>, <a href="https://en.wikipedia.org/wiki/Philosophy_of_physics" target="_blank" rel="noopener">physics</a>, and the <a href="https://en.wikipedia.org/wiki/Philosophy_of_mind" target="_blank" rel="noopener">mind</a>. But how exactly? Which journal in philosophy of science contributed the most to which part of the collective discussion? And to what extent our experience as embodied minds, shaped by particular institutions and influences, is reflective of the whole story? Are there some blind spots we fail to acknowledge?</p>
+<p>To answer the question above, we <a href="https://en.wikipedia.org/wiki/Web_scraping" target="_blank" rel="noopener">scraped</a> 8 key journals over 8 decades in Philosophy of Science. We pre-processed and cleaned the corpora to be in a <a href="https://en.wikipedia.org/wiki/Machine-readable_data" target="_blank" rel="noopener">machine-readable format</a> (this is definitely more work than one might think at first glance, especially when you hire master students with no prior experience to do some of it 👋). We then examined how topics changed across time using techniques such as the <a href="https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation" target="_blank" rel="noopener">Latent Dirichlet Allocation</a>. Informally, topics are hidden variables that impose order on a constellation of words. For example, <em>human</em>, <em>genome</em>, <em>dna</em> and <em>genetic</em> all make sense under the banner <em>Genetics</em>. Importantly, topics are said to be latent because they are never observed.</p>
+<p>All in all, one way to summarize how the interests of philosophers changed in the last 8 decades is with the following figure:</p>
+<p><img src="malaterre2020_fig2.png" alt=""></p>
+<p>In this figure, the colors represent 25 topics found between 1934 and 2017, and the area is proportional to the space occupied by the topics with respect to the whole discussion at that particular time (with the number of articles as dotted lines). For example, between 1946 and 1949, much of the discussion was about philosophy itself (by that we mean traditional philosophy or history of philosophy) and language, while in the 2000s the discussion is much more segregated and focused on specific disciplines. In the legend, we can also see that topics themselves are clustered in meta-communities (as shown by the cluster letters). If you would like to learn more about this project, please see our article <a href="https://link.springer.com/article/10.1007/s11229-020-02915-6" target="_blank" rel="noopener">Eight journals over eight decades: a computational topic-modeling approach to contemporary philosophy of science</a>.</p>
+<p>This is a typical example of what we do in CSS. We (philosophers, who are not particularly recognized for their use of coding in the field) analyzed a large-scale dataset to answer questions motivated by philosophy of science, and, in this case, is about philosophy of science.</p>
+<h2 id="wait-what-i-just-described-isnt-that-digital-humanities">Wait. What I just described. Isn’t that digital humanities?</h2>
+<p>Are CSS and <a href="https://en.wikipedia.org/wiki/Digital_humanities" target="_blank" rel="noopener">digital humanities</a> (DH) the same? Well, yes and no. Yes because the above CSS definition can and do certainly apply to DH. Moreover, in french-speaking world, it seems the most common translation of computational social science is digital humanities (<em>les humanités numériques</em>). At the same time, I can think of at least three main differences between DH and CSS:</p>
+<ul>
+<li><code>(i) type of data under study:</code> As opposed to computational social scientists who tend to analyze contemporary text data that originate from our digital traces, digital humanists analyze cultural artifacts of all shapes and sizes with books, letters, maps, historical documents, paintings and other works of art of all kinds we find in museums and archives. As such, digital humanists are much more engaged with domain-specific data who require particular knowledge and often has been neglected by computer scientists who lack this knowledge.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> It is not to say that computational social scientists never study books or manuscript letters, but I find it a useful rule of thumbs to distinguish the two.</li>
+<li><code>(ii) authors background:</code> Digital humanists are, well, from the humanities. Looking at the many scholars participating to the ongoing book <a href="https://dhdebates.gc.cuny.edu/" target="_blank" rel="noopener">Debates in the Digital Humanities</a>, we mostly find English teachers, librarians, historians, and digital media researchers. Although I might be wrong, I think this is representative of the field. CSS seems to have inherited the physics-minded people. And in my view this is the distinguishing feature between DH and CSS. In a seminal paper of the field, <em>Life in the network: the coming age of computational social science</em> (Lazer et al. 2009), we have computer scientists, physicists, political scientists, and sociologists discussing social physics. As a result, we find that the former group rarely use mathematical modeling and simulation to study social phenomena, while the latter tend to see people, and all of their history, as points in space.</li>
+<li><code>(iii) how the field came to be:</code> Finally, a simple way to find out if you are doing DH or CSS is to simply ask people around you who they think are the main players in their field. If the answer has something to do with the Santa Fe institute, you are doing CSS. If the answer directs you to an essay, you are in DH.</li>
+</ul>
+<p>This distinction is most certainly an oversimplification. A case in point, this <a href="https://academic.oup.com/dsh/article/34/3/616/5161109?login=true" target="_blank" rel="noopener">article</a> suggests that DH can at least be understood in 3 different ways. In any case, I hope you’ll find the above distinction useful. Feel free to disagree and send me articles to correct my view.</p>
+<p>In this first blog post, I introduced the first half of the title. In the next one, we’ll go over how computational social science can provide interesting insights to practitioners in science. In this case, ecologists.</p>
+<h2 id="css-resources">CSS resources</h2>
+<ul>
+<li>Chris Bail (Duke University - Political scientist): <a href="https://cbail.github.io/textasdata/Text">https://cbail.github.io/textasdata/Text</a>_as_Data.html</li>
+<li>Pedro Smaldino (UCMerced - Cultural Evolutionist): <a href="http://www.dysoc.org/cesmodules/social">http://www.dysoc.org/cesmodules/social</a>_dynamics_module/</li>
+<li>Scott Page (UMichigan - Economists): <a href="https://www.coursera.org/learn/model-thinking">https://www.coursera.org/learn/model-thinking</a></li>
+<li>Julia Silge &amp; David Robinson Tidytext book: <a href="https://www.tidytextmining.com/index.html">https://www.tidytextmining.com/index.html</a></li>
+<li>Quanteda Text Analysis with R for Students of Literature (Kennett Benoit et al.): <a href="https://quanteda.io/articles/pkgdown/replication/digital-humanities.html">https://quanteda.io/articles/pkgdown/replication/digital-humanities.html</a></li>
+</ul>
+<h2 id="reference">Reference</h2>
+<div id="refs" class="references hanging-indent">
+<div id="ref-lazer_social_2009">
+<p>Lazer, D., A. Pentland, L. Adamic, S. Aral, A.-L. Barabasi, D. Brewer, N. Christakis, et al. 2009. “SOCIAL SCIENCE: Computational Social Science.” <em>Science</em> 323 (5915): 721–23. <a href="https://doi.org/10.1126/science.1167742">https://doi.org/10.1126/science.1167742</a>.</p>
+</div>
+</div>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>For those who are interested, there are some great CSS resources at the end of the post <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>For a good example of what I mean by that, check out <a href="https://www.jessesadler.com/post/my-approach-to-dh/" target="_blank" rel="noopener">historian Jesse’s Sadler Blog</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+    </div>
+    
+    <div class="col-12 col-lg-2ish docs-toc">
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+      </ul>
+
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-is-computational-social-science">What is computational social science?</a></li>
+    <li><a href="#where-i-come-from">Where I come from…</a></li>
+    <li><a href="#wait-what-i-just-described-isnt-that-digital-humanities">Wait. What I just described. Isn’t that digital humanities?</a></li>
+    <li><a href="#css-resources">CSS resources</a></li>
+    <li><a href="#reference">Reference</a></li>
+  </ul>
+</nav>
+
+      
+    </div>
+  </div>
+    <div class="col-12 col-lg-10ish article-style">
+    <script src="https://utteranc.es/client.js"
+        repo="rbind/apreshill"
+        issue-term="title"
+        label="comments :crystal_ball:"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+    </div>
+  
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/computational-social-science/">computational social science</a>
+  
+  <a class="badge badge-light" href="/tag/digital-humanities/">digital humanities</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://jstonge.netlify.app/post/computational-social-science-meets-ecology-i/&amp;text=Computational%20social%20science%20meets%20ecology%20I" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://jstonge.netlify.app/post/computational-social-science-meets-ecology-i/&amp;t=Computational%20social%20science%20meets%20ecology%20I" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Computational%20social%20science%20meets%20ecology%20I&amp;body=https://jstonge.netlify.app/post/computational-social-science-meets-ecology-i/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://jstonge.netlify.app/post/computational-social-science-meets-ecology-i/&amp;title=Computational%20social%20science%20meets%20ecology%20I" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Computational%20social%20science%20meets%20ecology%20I%20https://jstonge.netlify.app/post/computational-social-science-meets-ecology-i/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://jstonge.netlify.app/post/computational-social-science-meets-ecology-i/&amp;title=Computational%20social%20science%20meets%20ecology%20I" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://jstonge.netlify.app"><img class="avatar mr-3 avatar-circle" src="/author/jonathan-st-onge/avatar_hu9340be3e63b68b9c2e07ec66d9edef74_798927_270x270_fill_q75_lanczos_center.jpg" alt="Jonathan St-Onge"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://jstonge.netlify.app">Jonathan St-Onge</a></h5>
+      <h6 class="card-subtitle">Intern CMB Computational Social Science team</h6>
+      <p class="card-text">A former philosopher of science and cognitive scientist, Jonathan St-Onge now purses his interest in computational social science.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/jonSO_" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=j_EggN4AAAAJ&amp;hl=en" target="_blank" rel="noopener">
+        <i class="fas fa-graduation-cap"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/jstonge" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+    Published with
+    <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a>  —
+    the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">
+    open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/latex.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'event' : "Events",
+        'slides' : "Slides"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/js/wowchemy.min.572b7caf7fe601716a0f74d67d754c21.js"></script>
+
+    
+
+
+
+
+
+
+</body>
+</html>

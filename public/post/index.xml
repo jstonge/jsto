@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog | Jonathan St-Onge</title>
+    <link>https://jstonge.netlify.app/post/</link>
+      <atom:link href="https://jstonge.netlify.app/post/index.xml" rel="self" type="application/rss+xml" />
+    <description>Blog</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 27 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://jstonge.netlify.app/images/icon_huf2f1e8e863cdb3c95f377fcad6856f60_223273_512x512_fill_lanczos_center_2.png</url>
+      <title>Blog</title>
+      <link>https://jstonge.netlify.app/post/</link>
+    </image>
+    
+    <item>
+      <title>The social structure of collaborations in ecology I</title>
+      <link>https://jstonge.netlify.app/post/the-social-structure-of-collaborations-in-ecology-i/</link>
+      <pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://jstonge.netlify.app/post/the-social-structure-of-collaborations-in-ecology-i/</guid>
+      <description>&lt;h2 id=&#34;coauthorship-networks&#34;&gt;Coauthorship networks&lt;/h2&gt;
+&lt;p&gt;To begin with, we will examine the coauthorship networks underlying our various journals. The study of coauthorship networks is a good example where the type analysis in itself is not new, but with the rise of large databases we can now identify patterns of collaboration at scales previously deemed impossible. In this line of work, our current dataset is relatively small. In a landmark article, Mark Newman analyzed a network of biology coauthors that contained more than 2 million articles.&lt;/p&gt;
+&lt;p&gt;Before looking at the coauthorship networks, we can already take a look at some statistics around collaboration in the journals.&lt;/p&gt;
+&lt;h3 id=&#34;network-statistics&#34;&gt;Network statistics&lt;/h3&gt;
+&lt;p&gt;Now, we describe our networks with some basic statistics:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;jn_title&lt;/th&gt;
+&lt;th style=&#34;text-align:right&#34;&gt;nodes&lt;/th&gt;
+&lt;th style=&#34;text-align:right&#34;&gt;edges&lt;/th&gt;
+&lt;th style=&#34;text-align:right&#34;&gt;mean_degree&lt;/th&gt;
+&lt;th style=&#34;text-align:right&#34;&gt;c&lt;/th&gt;
+&lt;th style=&#34;text-align:right&#34;&gt;r&lt;/th&gt;
+&lt;th style=&#34;text-align:right&#34;&gt;diameter&lt;/th&gt;
+&lt;th style=&#34;text-align:right&#34;&gt;S&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;pub_year&lt;/th&gt;
+&lt;th style=&#34;text-align:right&#34;&gt;authors_by_paper&lt;/th&gt;
+&lt;th style=&#34;text-align:right&#34;&gt;papers_by_author&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;range_yr&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Behavioral Ecology and Sociobiology&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;7594&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;16327&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;4.30&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.51&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.21&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;37&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.59&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1976-2016&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;2.46&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;1.72&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1976-2016&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Ecological Monographs&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;3514&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;14291&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;8.13&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.92&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.50&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;12&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.19&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1960-2020&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;2.96&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;1.22&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1960-2020&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Ecology&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;18205&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;68638&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;7.54&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.86&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.67&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;30&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.68&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1920-2017&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;1.87&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;1.85&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1920-2017&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Evolution&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;12655&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;33291&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;5.26&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.51&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.14&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;26&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.75&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1964-2020&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;2.24&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;1.97&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1964-2020&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Frontiers in Ecology and the Environment&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;5438&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;25888&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;9.52&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.71&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.22&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;18&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.61&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;2003-2020&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;2.87&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;1.60&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;2003-2020&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Functional Ecology&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;10155&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;36426&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;7.17&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.40&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.02&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;24&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.79&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1987-2020&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;3.52&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;1.62&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1987-2020&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Journal of Animal Ecology&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;9132&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;30347&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;6.65&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.44&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.05&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;22&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.79&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1932-2020&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;2.11&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;1.84&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1932-2020&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Journal of Applied Ecology&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;14277&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;61572&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;8.63&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.54&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.10&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;17&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.74&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1964-2020&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;2.99&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;1.58&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1964-2020&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Journal of Biogeography&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;12461&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;49998&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;8.02&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.67&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.27&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;26&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.68&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1974-2020&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;2.82&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;1.53&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1974-2020&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Journal of Ecology&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;9498&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;44798&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;9.43&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.59&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.26&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;18&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.82&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1960-2020&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;2.57&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;1.89&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1960-2020&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Methods in Ecology and Evolution&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;5359&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;25027&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;9.34&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.33&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;-0.07&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;22&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.97&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;2012-2020&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;5.35&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;1.45&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;2012-2020&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Oikos&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;13222&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;33796&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;5.11&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.58&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.15&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;26&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.59&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1949-2020&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;2.18&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;1.66&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1949-2020&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;PNAS&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;7962&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;46884&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;11.78&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.83&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.31&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;23&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.60&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1915-2017&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;2.53&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;1.25&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1915-2017&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Proceedings of the Royal Society B&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;29550&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;104488&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;7.07&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.63&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.17&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;30&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.72&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1990-2020&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;3.68&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;1.57&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1990-2020&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Science&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;7579&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;52214&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;13.78&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.88&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.63&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;16&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.55&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1900-2014&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;2.04&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;1.39&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1900-2014&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;The American Naturalist&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;7308&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;14904&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;4.08&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.63&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.35&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;28&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;0.55&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1930-2015&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;1.73&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;1.69&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1930-2015&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Detailed description of these features can be found in [@newman_coauthorship_2004], but we briefly go over them:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;clustering coefficient (c; transitivity) :&lt;/code&gt; the density of triangles in the network, i.e. is the friend of my friend is also my friend?&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;degree assortativity (r) :&lt;/code&gt; Also called the degree correlation for the networks, assortativity is the correlation coefficient for the number of collaborators that coauthors have, i.e. do people with many coauthors tend to also be connected together.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;largest component (S) :&lt;/code&gt; the fraction of authors found in the largest component.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;diameter :&lt;/code&gt; from &lt;a href=&#34;https://igraph.org/r/doc/diameter.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;igraph&lt;/a&gt;, the diameter is the length of the longest geodesic.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The above table is rich in information. It is best to visualize it:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://jstonge.netlify.app/post/the-social-structure-of-collaborations-in-ecology-i/index_files/figure-html/GGally all measures-1.png&#34; width=&#34;1260&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Although we could do some star gazing here, we should be careful in interpreting these relationships. We have hundred years worth of data in here, and many scientific behaviors changed over time. Combining what we say in the previous table as well, we note the following about our journals:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Functional ecology :&lt;/code&gt; 68% in the first component. Low assortativity. High mean of authors by paper. Average diameter. We note on the plot the outlier around an individual who would have collaborated with 1000 people.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ecology :&lt;/code&gt; Highest assortativity of all (0.68). 68K edges.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Science&lt;/code&gt;: best power-law fit. Second highest assortativity.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ecological Monographs :&lt;/code&gt; Few papers by authors. Smallest first component and diameter (13% and a diameter equals to 9).&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Methods in Ecology and Evolution :&lt;/code&gt; Black sheep. 97% in the first component! On average 5.35 authors by paper. Slightly negative assortativity&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Proceedings of the Royal Society B :&lt;/code&gt; Many edges (104K). Perhaps the categorization of JSTOR is not restrictive enough.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To best appreciate the long tail distribution underlying the mean numbers of papers and coauthors, we give each of them an axis and produce a log-log plot:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://jstonge.netlify.app/post/the-social-structure-of-collaborations-in-ecology-i/index_files/figure-html/count all authors-1.png&#34; width=&#34;1260&#34; /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;the-core&#34;&gt;The Core&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;K&lt;/em&gt;-core decomposition is a popular method to decompose our networks into a succession of nested cores.&lt;/p&gt;
+&lt;p&gt;This approach is essential when it comes to study coauthorship networks because of the many singletons we have in our networks. For example, &lt;code&gt;Ecological Monographs&lt;/code&gt;, which has the smallest giant component, have a total ~160 components with only 2 individuals. Using &lt;em&gt;K&lt;/em&gt;-cores we can peel of these small components and only keep subgroups with at least some significant amount of structure.&lt;/p&gt;
+&lt;p&gt;There are different choices we can make to clarify the structure of our networks. The main ones for our purpose will be &lt;em&gt;time&lt;/em&gt;, &lt;em&gt;layers&lt;/em&gt; and &lt;em&gt;coreness&lt;/em&gt;, and the &lt;em&gt;number of components&lt;/em&gt;. In each case, we can subset the whole network so that we get something we can visualize. Note that there are no imperative to visualize a network, but people seems to like that.&lt;/p&gt;
+&lt;p&gt;We will not be only interested in the most central cores according to the &lt;em&gt;k&lt;/em&gt;-core decomposition algorithm. Since we have some temporal resolution, we want to keep some people further off in the periphery to check if they will eventually play a role a more central role.&lt;/p&gt;
+&lt;h3 id=&#34;how-do-you-want-your-gs--how-do-edge-count-and-first-component-evolve-for-each-journal&#34;&gt;How do you want your Gs : how do edge count and first component evolve for each journal&lt;/h3&gt;
+&lt;p&gt;Journals vary in their publication profiles both across journal and time. To make a more informed choice of how to slice our Gs so that we have a balanced view, we take a look at how nodes, edges, and first component evolve over time. Ideally, we will want to examine time slice where each slice have enough of each to be interesting, but not too much so that we need to specify parameters for each time slice.&lt;/p&gt;
+&lt;p&gt;Intuitively, I would say that the pace of science accelerated (like the rest of the world). Consequently, we can ask ourselves if core formation happens more or less quickly in more recent years than before. The issues is that pretty much everything changed from the fifties to 2020s.&lt;/p&gt;
+&lt;p&gt;As we already said, there are some &lt;em&gt;desiderata&lt;/em&gt; for what we want as core.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;We want to find the hubs, but not that they are so dense that we would miss important actors when it comes to connect different journals.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;to-what-extent-the-first-comp-is-stable&#34;&gt;To what extent the first comp is stable?&lt;/h3&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Computational social science meets ecology II</title>
+      <link>https://jstonge.netlify.app/post/computational-social-science-meets-ecology-ii/</link>
+      <pubDate>Sun, 24 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://jstonge.netlify.app/post/computational-social-science-meets-ecology-ii/</guid>
+      <description>&lt;!-- **Goals of this post** --&gt;
+&lt;!-- - `Definitional:` What is computational social science --&gt;
+&lt;!-- - Introduce my goals for this oncoming post series, aka why this blog might be of interest to you: --&gt;
+&lt;!--    - `CSS meets ecology:` To motivate CSS potential contribution to practitioners, in this case ecologists --&gt;
+&lt;!--    - `Codes and methods clearly explained:` Show and explain the methodology used in CSS --&gt;
+&lt;!--    - `Theoretical aspiration:` To develop a theory of how social relationships and modeling practices co-evolve in ecology --&gt;
+&lt;p&gt;Current plan for the series (preliminary):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Computational social science meets ecology I : what is CSS&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; CSS meets ecology II&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Social structure I : coauthorship networks within journal&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Social structure II : coauthorship networks across journals&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Informational structure I : title dynamics&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Informational structure II : the mandatory topic modeling&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Informational structure III : going full transformers&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Informational structure IV : models phylogeny&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;css-meets-ecology&#34;&gt;CSS meets ecology&lt;/h2&gt;
+&lt;p&gt;In the last post, I talked about philosophers of science research agenda over the last 8 decades. But why do we care about that? More importantly, why practitioners in other fields, say ecology, might care about this kind of inquiry?&lt;/p&gt;
+&lt;h2 id=&#34;the-science-of-science-perspective&#34;&gt;The Science of science perspective&lt;/h2&gt;
+&lt;p&gt;CSS can be motivated from a science of science perspective [scisci; @fortunato_science_2018]. Scisci is in a sense more concrete than CSS; it seeks to study the structure and evolution of science itself through networks and other tools from complex science. It tackles questions on career dynamics (who publish what at what age or career stage), universal laws in citation patterns, the impact of team size on the type of science being done, how scientists select what they want to work on, and so on. Of interest is how they define science:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Science can be described as a complex, self-organizing, and evolving network of &lt;em&gt;scholars&lt;/em&gt;, &lt;em&gt;projects&lt;/em&gt;, &lt;em&gt;papers&lt;/em&gt;, and &lt;em&gt;ideas&lt;/em&gt;. [@fortunato_science_2018]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Thus, a second objective of this series is to flesh out the multilayer network of scholars, papers, institutions, ideas, &lt;em&gt;and models&lt;/em&gt; in ecology to provide useful insights to practitioners as to where particular ideas and modeling practices come from. I hope to show that this is useful to &lt;em&gt;validate&lt;/em&gt; practitioners intuitions about their ideas, but also that it has the potential to &lt;em&gt;provide new insights&lt;/em&gt; on how to navigate the complex sociocultural networks that surround them.&lt;/p&gt;
+&lt;p&gt;Before going any further, why ecology? During my master, I became interested in ecology for its role in the evolution of modeling in science. Ever since the 50s and 60s, ecology positioned itself has a pioneering field in the study of complex systems using models, i.e. simplified but useful and multifunctional representations/descriptions/approximations (pick one) of latent phenomena in the world. This step, to see models as a valid means to study complex systems, is a major leap in science. Before that, models weren&amp;rsquo;t seen as an end in themselves but as a temporary step towards developing physic-like theories [@morgan_models_1999, ch.3]. An illustrative passage that shows this change of mind can be found in Joan Roughgarden&amp;rsquo;s &lt;em&gt;Primer of Ecological Theory&lt;/em&gt;, where she describes the necessary trade-off between simplicity and details in modeling:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you&amp;rsquo;re a physicist, talks about kinds of models, and negotiations between simplicity and detail, seems strange indeed. One doesn&amp;rsquo;t negotiate about &lt;em&gt;F = ma&lt;/em&gt; or the laws of thermodynamics. So ecology is different and it&amp;rsquo;s a good idea to accept this now. For the most part, mathematical models in ecology are not foundational, they are supplemental, and judged by their utility. [@roughgarden_primer_1998]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Something has changed with the practice of modeling in ecology. I feel that ecology made us more comfortable with the idea that an approximate representation of the world might be good enough. Echoing philosopher William C. Wimsatt, ecologists were among the first to methodologically embrace the fact that we are limited beings in a very complex world, and that models might be our best shot at representing reality [see @wimsatt_re-engineering_2007 for more on how we are limited beings]. Anyway, one key objective of this series of posts will be to better understand the coevolution of modeling practices and social structure, e.g. how socio-technical environments influence the practice of modeling, from their interpretations to the types of models we use, and, in turn, how modeling influence the fabric of social interactions when we do science.&lt;/p&gt;
+&lt;p&gt;Now, all of this will require some data.&lt;/p&gt;
+&lt;h2 id=&#34;show-me-what-you-got&#34;&gt;Show me what you got&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;jstor.org/dfr/&#34;&gt;JSTOR Data for Research (DfR)&lt;/a&gt; is a large database that contains over 12 million academic journal articles. Among these journals, some of them are ecology-related. What ecology-related journals do JSTOR DfR have? Starting from the premise that science is a network of authors, papers, institutions, and ideas, we circumscribe the scope of our investigation to the journals published by the main ecological societies, namely &lt;a href=&#34;https://esajournals.onlinelibrary.wiley.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ecological Society of America&lt;/a&gt;, &lt;a href=&#34;https://besjournals.onlinelibrary.wiley.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;British Ecological Society&lt;/a&gt;, &lt;a href=&#34;https://www.oikosjournal.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Oikos&lt;/a&gt;, and the &lt;a href=&#34;https://www.amnat.org/home.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;American Society of Naturalists&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Additionally, we consider well-known journals such as &lt;a href=&#34;https://www.sciencemag.org/journal-category/ecology&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Science&lt;/a&gt;, &lt;a href=&#34;https://www.pnas.org/ecology&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Proceedings of the National Academy of Science&lt;/a&gt; and &lt;a href=&#34;https://royalsocietypublishing.org/toc/rspb/current&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Royal Society&lt;/a&gt; that are known to publish ecological content. We use the category by JSTOR DfR to identify the articles within these journals that are related to ecology.&lt;/p&gt;
+&lt;p&gt;There are some journals we are unclear if we should keep or not. For example, is the &lt;code&gt;Journal of Biogeography&lt;/code&gt; part of ecology? On their website, editors claim that the journal lies at the intersection of biology and geography. Ecology being part of biology, then the journal is partly ecology, right? Well, I am not so sure. Biology today covers many scales and different worldviews. Thus, saying that a journal is in biology does not imply that it is ecology. But we know that some famous insular biogeographers, such as Robert MacArthur, are also well-known ecologists. Instead of settling for a yes and no answer, for now we are keeping the &lt;code&gt;Journal of Biogeography&lt;/code&gt; for experimentation. We will seek to find ways to empirically assess whether, or to what extent, a journal is or is not related to ecology.&lt;/p&gt;
+&lt;p&gt;Given the above criteria, JSTOR DfR have 17 ecology-related journals:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://jstonge.netlify.app/post/computational-social-science-meets-ecology-ii/index_files/figure-html/plot_count_articles-1.png&#34; width=&#34;2340&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Our corpus contains 17 journals from two databases (&lt;a href=&#34;https://www.portico.org&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Portico&lt;/a&gt; and &lt;a href=&#34;jstor.org/&#34;&gt;JSTOR&lt;/a&gt;), and have very different life spans and volume of published articles. For later use, I represent the number of articles for which we have abstracts as shaded bars. We can see that most often we miss more contemporary abstracts because the Portico database doesn&amp;rsquo;t seem to have done such as good job capturing them.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s take a closer look at the data by &lt;code&gt;glimpsing&lt;/code&gt; at it:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Rows: 106,852
+Columns: 15
+$ id          &amp;lt;chr&amp;gt; &amp;quot;http://www.jstor.org/stable/4599110&amp;quot;, &amp;quot;http://www.jstor.…
+$ title       &amp;lt;chr&amp;gt; &amp;quot;the behavioral ecology of mating in harvester ants (hyme…
+$ pub_year    &amp;lt;dbl&amp;gt; 1976, 1976, 1976, 1976, 1976, 1976, 1976, 1976, 1976, 197…
+$ abstract    &amp;lt;chr&amp;gt; &amp;quot;1. The four sympatric species of Pogonomyrmex (P. barbat…
+$ date        &amp;lt;date&amp;gt; 1976-01-01, 1976-01-01, 1976-01-01, 1976-01-01, 1976-01-…
+$ url         &amp;lt;chr&amp;gt; &amp;quot;http://www.jstor.org/stable/4599110&amp;quot;, &amp;quot;http://www.jstor.…
+$ publisher   &amp;lt;chr&amp;gt; &amp;quot;Springer&amp;quot;, &amp;quot;Springer&amp;quot;, &amp;quot;Springer&amp;quot;, &amp;quot;Springer&amp;quot;, &amp;quot;Springer…
+$ authors     &amp;lt;chr&amp;gt; &amp;quot;bert_holldobler&amp;quot;, &amp;quot;bert_holldobler&amp;quot;, &amp;quot;edward_o_wilson&amp;quot;, …
+$ jn_title    &amp;lt;chr&amp;gt; &amp;quot;Behavioral Ecology and Sociobiology&amp;quot;, &amp;quot;Behavioral Ecolog…
+$ identifiers &amp;lt;chr&amp;gt; &amp;quot;[{&#39;name&#39;: &#39;issn&#39;, &#39;value&#39;: &#39;03405443&#39;}, {&#39;name&#39;: &#39;local_…
+$ wc          &amp;lt;dbl&amp;gt; 7044, 16383, 8060, 6526, 9654, 13382, 9032, 6939, 13145, …
+$ doi         &amp;lt;chr&amp;gt; &amp;quot;10.2307/4599110&amp;quot;, &amp;quot;10.2307/4599087&amp;quot;, &amp;quot;10.2307/4599089&amp;quot;, …
+$ timestamp   &amp;lt;dbl&amp;gt; 189302400, 189302400, 189302400, 189302400, 189302400, 18…
+$ half_decade &amp;lt;dbl&amp;gt; 1975, 1975, 1975, 1975, 1975, 1975, 1975, 1975, 1975, 197…
+$ doc_id      &amp;lt;dbl&amp;gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17…
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Each row is an article, meaning that we have 106,850 articles in our dataset. That said, what count as an article? Do &lt;code&gt;editorial&lt;/code&gt;, &lt;code&gt;preface&lt;/code&gt;, or &lt;code&gt;erratum&lt;/code&gt; count as articles? For now, we will just consider everything as an article. Anyway, we can see that for each article we have its &lt;code&gt;id&lt;/code&gt; (provided by JSTOR), &lt;code&gt;title&lt;/code&gt;, &lt;code&gt;pub_year&lt;/code&gt;, &lt;code&gt;abstract&lt;/code&gt;, &lt;code&gt;publisher&lt;/code&gt;, &lt;code&gt;jn_title&lt;/code&gt;, &lt;code&gt;authors&lt;/code&gt;, &lt;code&gt;wc&lt;/code&gt; (e.g. word count of the article), &lt;code&gt;doi&lt;/code&gt; (extracted from the various identifiers), &lt;code&gt;doc_id&lt;/code&gt; (our own custom id we will use as unique identifiers), and so on.&lt;/p&gt;
+&lt;p&gt;From the given word count, we calculate that our corpus is around 656 million words. We do not have directly access to all these words, though. To access the full text, one must first take an arrangement with the JSTOR DfR team. And that is exactly what I did for my master thesis. My interaction with them was nice, and within a few weeks they gave me access to over 13G of text data. Unfortunately, you get the raw data from their Optical Character Recognition (OCR) algorithm, ran over their PDFs of varying shape and quality. To be honest, to clean that up is a mess and something I will keep for a later post. This is why we begin with exploring something nice and easy in the next post, namely the social structure hidden in coauthorship networks.&lt;/p&gt;
+&lt;p&gt;On that, thanks for reading this introductory post and I will see you later!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Computational social science meets ecology I</title>
+      <link>https://jstonge.netlify.app/post/computational-social-science-meets-ecology-i/</link>
+      <pubDate>Wed, 13 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://jstonge.netlify.app/post/computational-social-science-meets-ecology-i/</guid>
+      <description>&lt;h2 id=&#34;what-is-computational-social-science&#34;&gt;What is computational social science?&lt;/h2&gt;
+&lt;p&gt;Broadly speaking, &lt;a href=&#34;https://en.wikipedia.org/wiki/Computational_social_science&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;computational social science&lt;/a&gt; (CSS) is an umbrella term for social scientists who started to use computational methods to analyze social phenomena through large-scale datasets (Lazer et al. 2009). The meaning of the &lt;em&gt;computational&lt;/em&gt; label in front of the social science can be found in the following description of the &lt;a href=&#34;https://computationalthinking.mit.edu/Fall20/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;computational thinking course&lt;/a&gt; offered at MIT:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is an introductory course on Computational Thinking. We use the &lt;a href=&#34;http://www.julialang.org&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Julia programming language&lt;/a&gt; to approach real-world problems in varied areas applying data analysis and computational and mathematical modeling. In this class you will learn computer science, software, algorithms, applications, and mathematics as an integrated whole.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Much to the dismay of those entering the field, CSS is really about combining domain expertise in one’s own discipline (which itself can be interdisciplinary), fluency in computational and mathematical modeling, and good programming practices in ways that actually answer relevant questions. Easy peasy. While it may seem overwhelming, there are now computational shortcuts to compensate for the lack of mathematical capabilities (knowing what is an integral is important, but knowing how to solve them is not absolutely necessary) and friendly online resources to start learning all of these skills.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Let me give you an example to make this whole CSS idea more concrete.&lt;/p&gt;
+&lt;h2 id=&#34;where-i-come-from&#34;&gt;Where I come from…&lt;/h2&gt;
+&lt;p&gt;I got into CSS from philosophy of science, where I collaborated on a project at the &lt;a href=&#34;https://chairephilosciences.uqam.ca/en/laps/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LAPS&lt;/a&gt; that sought to examine how the interests in our own field evolved through time. That is, we know that at some point we, as a field, were really into language and logic. Later on, different communities began to work on the &lt;a href=&#34;https://en.wikipedia.org/wiki/Problem_of_induction&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;problem of induction&lt;/a&gt; and the &lt;a href=&#34;https://en.wikipedia.org/wiki/Demarcation_problem&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;demarcation problem&lt;/a&gt;, and others got interested by &lt;a href=&#34;https://en.wikipedia.org/wiki/Philosophy_of_biology&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;biology&lt;/a&gt;, &lt;a href=&#34;https://plato.stanford.edu/entries/models-science/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;models&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/Philosophy_of_physics&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;physics&lt;/a&gt;, and the &lt;a href=&#34;https://en.wikipedia.org/wiki/Philosophy_of_mind&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;mind&lt;/a&gt;. But how exactly? Which journal in philosophy of science contributed the most to which part of the collective discussion? And to what extent our experience as embodied minds, shaped by particular institutions and influences, is reflective of the whole story? Are there some blind spots we fail to acknowledge?&lt;/p&gt;
+&lt;p&gt;To answer the question above, we &lt;a href=&#34;https://en.wikipedia.org/wiki/Web_scraping&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;scraped&lt;/a&gt; 8 key journals over 8 decades in Philosophy of Science. We pre-processed and cleaned the corpora to be in a &lt;a href=&#34;https://en.wikipedia.org/wiki/Machine-readable_data&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;machine-readable format&lt;/a&gt; (this is definitely more work than one might think at first glance, especially when you hire master students with no prior experience to do some of it 👋). We then examined how topics changed across time using techniques such as the &lt;a href=&#34;https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Latent Dirichlet Allocation&lt;/a&gt;. Informally, topics are hidden variables that impose order on a constellation of words. For example, &lt;em&gt;human&lt;/em&gt;, &lt;em&gt;genome&lt;/em&gt;, &lt;em&gt;dna&lt;/em&gt; and &lt;em&gt;genetic&lt;/em&gt; all make sense under the banner &lt;em&gt;Genetics&lt;/em&gt;. Importantly, topics are said to be latent because they are never observed.&lt;/p&gt;
+&lt;p&gt;All in all, one way to summarize how the interests of philosophers changed in the last 8 decades is with the following figure:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;malaterre2020_fig2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In this figure, the colors represent 25 topics found between 1934 and 2017, and the area is proportional to the space occupied by the topics with respect to the whole discussion at that particular time (with the number of articles as dotted lines). For example, between 1946 and 1949, much of the discussion was about philosophy itself (by that we mean traditional philosophy or history of philosophy) and language, while in the 2000s the discussion is much more segregated and focused on specific disciplines. In the legend, we can also see that topics themselves are clustered in meta-communities (as shown by the cluster letters). If you would like to learn more about this project, please see our article &lt;a href=&#34;https://link.springer.com/article/10.1007/s11229-020-02915-6&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Eight journals over eight decades: a computational topic-modeling approach to contemporary philosophy of science&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This is a typical example of what we do in CSS. We (philosophers, who are not particularly recognized for their use of coding in the field) analyzed a large-scale dataset to answer questions motivated by philosophy of science, and, in this case, is about philosophy of science.&lt;/p&gt;
+&lt;h2 id=&#34;wait-what-i-just-described-isnt-that-digital-humanities&#34;&gt;Wait. What I just described. Isn’t that digital humanities?&lt;/h2&gt;
+&lt;p&gt;Are CSS and &lt;a href=&#34;https://en.wikipedia.org/wiki/Digital_humanities&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;digital humanities&lt;/a&gt; (DH) the same? Well, yes and no. Yes because the above CSS definition can and do certainly apply to DH. Moreover, in french-speaking world, it seems the most common translation of computational social science is digital humanities (&lt;em&gt;les humanités numériques&lt;/em&gt;). At the same time, I can think of at least three main differences between DH and CSS:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;(i) type of data under study:&lt;/code&gt; As opposed to computational social scientists who tend to analyze contemporary text data that originate from our digital traces, digital humanists analyze cultural artifacts of all shapes and sizes with books, letters, maps, historical documents, paintings and other works of art of all kinds we find in museums and archives. As such, digital humanists are much more engaged with domain-specific data who require particular knowledge and often has been neglected by computer scientists who lack this knowledge.&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; It is not to say that computational social scientists never study books or manuscript letters, but I find it a useful rule of thumbs to distinguish the two.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;(ii) authors background:&lt;/code&gt; Digital humanists are, well, from the humanities. Looking at the many scholars participating to the ongoing book &lt;a href=&#34;https://dhdebates.gc.cuny.edu/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Debates in the Digital Humanities&lt;/a&gt;, we mostly find English teachers, librarians, historians, and digital media researchers. Although I might be wrong, I think this is representative of the field. CSS seems to have inherited the physics-minded people. And in my view this is the distinguishing feature between DH and CSS. In a seminal paper of the field, &lt;em&gt;Life in the network: the coming age of computational social science&lt;/em&gt; (Lazer et al. 2009), we have computer scientists, physicists, political scientists, and sociologists discussing social physics. As a result, we find that the former group rarely use mathematical modeling and simulation to study social phenomena, while the latter tend to see people, and all of their history, as points in space.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;(iii) how the field came to be:&lt;/code&gt; Finally, a simple way to find out if you are doing DH or CSS is to simply ask people around you who they think are the main players in their field. If the answer has something to do with the Santa Fe institute, you are doing CSS. If the answer directs you to an essay, you are in DH.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This distinction is most certainly an oversimplification. A case in point, this &lt;a href=&#34;https://academic.oup.com/dsh/article/34/3/616/5161109?login=true&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;article&lt;/a&gt; suggests that DH can at least be understood in 3 different ways. In any case, I hope you’ll find the above distinction useful. Feel free to disagree and send me articles to correct my view.&lt;/p&gt;
+&lt;p&gt;In this first blog post, I introduced the first half of the title. In the next one, we’ll go over how computational social science can provide interesting insights to practitioners in science. In this case, ecologists.&lt;/p&gt;
+&lt;h2 id=&#34;css-resources&#34;&gt;CSS resources&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Chris Bail (Duke University - Political scientist): &lt;a href=&#34;https://cbail.github.io/textasdata/Text&#34;&gt;https://cbail.github.io/textasdata/Text&lt;/a&gt;_as_Data.html&lt;/li&gt;
+&lt;li&gt;Pedro Smaldino (UCMerced - Cultural Evolutionist): &lt;a href=&#34;http://www.dysoc.org/cesmodules/social&#34;&gt;http://www.dysoc.org/cesmodules/social&lt;/a&gt;_dynamics_module/&lt;/li&gt;
+&lt;li&gt;Scott Page (UMichigan - Economists): &lt;a href=&#34;https://www.coursera.org/learn/model-thinking&#34;&gt;https://www.coursera.org/learn/model-thinking&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Julia Silge &amp;amp; David Robinson Tidytext book: &lt;a href=&#34;https://www.tidytextmining.com/index.html&#34;&gt;https://www.tidytextmining.com/index.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Quanteda Text Analysis with R for Students of Literature (Kennett Benoit et al.): &lt;a href=&#34;https://quanteda.io/articles/pkgdown/replication/digital-humanities.html&#34;&gt;https://quanteda.io/articles/pkgdown/replication/digital-humanities.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;reference&#34;&gt;Reference&lt;/h2&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references hanging-indent&#34;&gt;
+&lt;div id=&#34;ref-lazer_social_2009&#34;&gt;
+&lt;p&gt;Lazer, D., A. Pentland, L. Adamic, S. Aral, A.-L. Barabasi, D. Brewer, N. Christakis, et al. 2009. “SOCIAL SCIENCE: Computational Social Science.” &lt;em&gt;Science&lt;/em&gt; 323 (5915): 721–23. &lt;a href=&#34;https://doi.org/10.1126/science.1167742&#34;&gt;https://doi.org/10.1126/science.1167742&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;For those who are interested, there are some great CSS resources at the end of the post &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;For a good example of what I mean by that, check out &lt;a href=&#34;https://www.jessesadler.com/post/my-approach-to-dh/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;historian Jesse’s Sadler Blog&lt;/a&gt; &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

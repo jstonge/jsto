@@ -1,0 +1,18 @@
+{
+  "name": "Jonathan St-Onge",
+  "short_name": "Jonathan St-Onge",
+  "lang": "en-us",
+  "theme_color": "#06805E",
+  "background_color": "#06805E",
+  "icons": [{
+    "src": "/images/icon_huf2f1e8e863cdb3c95f377fcad6856f60_223273_192x192_fill_lanczos_center_2.png",
+    "sizes": "192x192",
+    "type": "image/png"
+    }, {
+    "src": "/images/icon_huf2f1e8e863cdb3c95f377fcad6856f60_223273_512x512_fill_lanczos_center_2.png",
+    "sizes": "512x512",
+    "type": "image/png"
+     }],
+  "display": "standalone",
+  "start_url": "/?utm_source=web_app_manifest"
+}

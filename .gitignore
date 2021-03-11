@@ -4,6 +4,11 @@
 .Ruserdata
 .DS_Store
 Thumbs.db
-static/all_coauthorships_040121.tsv.gz
-static/all_journals_prep.tsv.gz
+
+static/*tsv.gz
 static/all_networks_peixoto.csv
+
+content/post/2021-02-13-data-interlude-show-me-what-you-got/
+content/post/2021-01-27-the-social-structure-of-collaborations-in-ecology-i
+
+public/post/the-social-structure-of-collaborations-in-ecology-i/ 

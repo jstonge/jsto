@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dataviz | Jonathan St-Onge</title>
+    <link>https://jstonge.netlify.app/tag/dataviz/</link>
+      <atom:link href="https://jstonge.netlify.app/tag/dataviz/index.xml" rel="self" type="application/rss+xml" />
+    <description>Dataviz</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 01 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://jstonge.netlify.app/images/icon_huf2f1e8e863cdb3c95f377fcad6856f60_223273_512x512_fill_lanczos_center_2.png</url>
+      <title>Dataviz</title>
+      <link>https://jstonge.netlify.app/tag/dataviz/</link>
+    </image>
+    
+    <item>
+      <title>JSTOR-DfR-Ecology</title>
+      <link>https://jstonge.netlify.app/project/jstor-dfr-ecology/</link>
+      <pubDate>Sun, 01 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>https://jstonge.netlify.app/project/jstor-dfr-ecology/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

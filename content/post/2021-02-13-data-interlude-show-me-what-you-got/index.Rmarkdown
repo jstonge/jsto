@@ -1,0 +1,261 @@
+---
+title: 'Data interlude: show me what you got'
+author: Jonathan St-Onge
+date: '2021-02-13'
+slug: data-interlude-show-me-what-you-got
+categories: []
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2021-02-13T15:21:10+01:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+```{r setup, message=FALSE, warning=FALSE, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, 
+                      collapse = TRUE, comment = NA, cache = TRUE,
+                      cache.lazy = FALSE, dpi = 180)
+
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(ggplot2)
+library(ggtext)
+library(cowplot)
+library(here)
+library(glue)
+theme_set(theme_bw())
+```
+
+```{r eval=FALSE, include=FALSE}
+# d <- vroom::vroom(here("static", "all_journals_prep.tsv.gz"))
+# tidy_d <- d %>% mutate(authors = str_split(authors, ", ")) %>% unnest(c(authors))
+```
+
+
+```{r eval=FALSE, include=FALSE}
+# p1 <- d %>% 
+#   count(pub_year) %>% 
+#   filter(pub_year < 2014) %>% 
+#   ggplot(aes(x=pub_year, y=n)) + 
+#   geom_point(size=0.8) +
+#   stat_smooth(method="glm", method.args=list(family=gaussian(link="log")), 
+#               linetype="dashed", se=FALSE) +
+#   ylab("Annual number of articles`")
+# 
+# get_new_authors <- function(df, x) {
+#   authors_x <- df %>% filter(pub_year <= x) %>% distinct(author) %>% pull()
+#   authors_y <- df %>% filter(pub_year == x+1) %>% distinct(author) %>% pull()
+#   
+#   # Authors that are in y (authors at time t+1) but not in x (authors up to t)
+#   nb_new_authors <- length(setdiff(authors_y, authors_x))
+#   
+#   return(tibble(pub_year=x, nb_new_authors=nb_new_authors))
+# }
+# 
+# new_authors_tbl <- purrr::map_dfr(.x=sort(unique(d$pub_year)), ~get_new_authors(tidy_d, .x))
+# 
+# p2 <- new_authors_tbl %>% 
+#   filter(pub_year < 2014) %>% 
+#   ggplot(aes(pub_year, nb_new_authors)) + 
+#   geom_point(size=0.8) +
+#   stat_smooth(method="glm", method.args=list(family = gaussian(link="log")), 
+#               linetype="dashed", se=FALSE) +
+#   ylab("Annual number of new authors")
+# 
+# p3 <- tidy_d %>% 
+#   count(id, jn_title, half_decade) %>% 
+#   group_by(jn_title, half_decade) %>% 
+#   summarise(mean_authors = mean(n)) %>% 
+#   filter(half_decade < 2016) %>% 
+#   ggplot(aes(half_decade, mean_authors)) + 
+#   geom_point(size=0.8) +
+#   labs(x=NULL, y="Mean number authors", color = "Journal title")
+# 
+# plot_grid(p1, p2, p3, ncol = 3)
+```
+
+## Show me what you got
+
+[JSTOR Data for Research (DfR)](jstor.org/dfr/) is a large database that contains over 12 million academic journal articles. Among these journals, some of them are ecology-related. What ecology-related journals do JSTOR DfR have? Starting from the premise that science is a network of authors, papers, institutions, and ideas, we circumscribe the scope of our investigation to the journals published by the main ecological societies, namely [Ecological Society of America](https://esajournals.onlinelibrary.wiley.com/), [British Ecological Society](https://besjournals.onlinelibrary.wiley.com/), [Oikos](https://www.oikosjournal.org/), and the [American Society of Naturalists](https://www.amnat.org/home.html).
+
+Additionally, we consider well-known journals such as [Science](https://www.sciencemag.org/journal-category/ecology), [Proceedings of the National Academy of Science](https://www.pnas.org/ecology) and [The Royal Society](https://royalsocietypublishing.org/toc/rspb/current) that are known to publish ecological content. We use the category by JSTOR DfR to identify the articles within these journals that are related to ecology.
+
+There are some journals we are unclear if we should keep or not. For example, is the `Journal of Biogeography` part of ecology? On their website, editors claim that the journal lies at the intersection of biology and geography. Ecology being part of biology, then the journal is partly ecology, right? Well, I am not so sure. Biology today covers many scales and different worldviews. Thus, saying that a journal is in biology does not imply that it is ecology. But we know that some famous insular biogeographers, such as Robert MacArthur, are also well-known ecologists. Instead of settling for a yes and no answer, for now we are keeping the `Journal of Biogeography` for experimentation. We will seek to find ways to empirically assess whether, or to what extent, a journal is or is not related to ecology.
+
+Given the above criteria, JSTOR DfR have 17 ecology-related journals:
+
+```{r eval=FALSE, include=FALSE}
+# count_articles <- d %>%
+#   mutate(Database = if_else(str_detect(id, "^ark"), "ARK", "JSTOR")) %>%
+#   distinct(title, .keep_all = TRUE) %>%
+#   count(jn_title, Database, pub_year, name = "n_articles") %>%
+#   group_by(pub_year, jn_title) %>%
+#   mutate(tot_n_articles = cumsum(n_articles))
+#
+# count_articles_w_abstacts <- d %>%
+#   filter(!is.na(abstract)) %>%
+#   distinct(title, .keep_all = TRUE) %>%
+#   count(pub_year, jn_title, name = "n_articles_w_abstract")
+#
+# count_articles %>%
+#     replace_na(list(n_articles_w_abstract = 0)) %>%
+#     ggplot() +
+#     geom_col(aes(pub_year, tot_n_articles, fill = Database),
+#              alpha = .6, color="black") +
+#     geom_col(data = count_articles_w_abstacts,
+#              mapping = aes(pub_year, n_articles_w_abstract),
+#              fill = "black", alpha = .5) +
+#     scale_fill_brewer(palette = "Dark2") +
+#     theme_half_open(12) +
+#     background_grid() +
+#     theme(
+#       axis.text.x = element_text(angle = 75, vjust = 1, hjust=1),
+#       strip.background = element_blank(),
+#       strip.text = element_textbox(
+#         size = 12,
+#         color = "white", fill = "#5D729D", box.color = "#4A618C",
+#         halign = 0.5, linetype = 1, r = unit(5, "pt"), width = unit(1, "npc"),
+#         padding = margin(2, 0, 1, 0), margin = margin(3, 3, 3, 3)
+#       )
+#     ) + xlab(NULL) + ylab("# articles") +
+#     labs(title = "Count articles by journals across time",
+#          subtitle = "(shaded area is the articles for which we have abstracts)") +
+#     facet_wrap(~jn_title, ncol = 3)
+```
+
+
+Our corpus contains 17 journals from two databases ([Portico](https://www.portico.org) and [JSTOR](jstor.org/)), and have very different life spans and volume of published articles. For later use, I represent the number of articles for which we have abstracts as shaded bars. We can see that most often we miss more contemporary abstracts because the Portico database doesn't seem to have done such as good job capturing them.
+
+Let's take a closer look at the data by `glimpsing` at it:
+
+```{r eval=FALSE, include=FALSE}
+# d <- d %>% filter(jn_title != "Ecological Bulletins")
+# glimpse(d)
+```
+
+
+Each row is an article, meaning that we have 106,850 articles in our dataset. That said, what count as an article? Do `editorial`, `preface`, or `erratum` count as articles? For now, we will just consider everything as an article. Anyway, we can see that for each article we have its `id` (provided by JSTOR), `title`, `pub_year`, `abstract`, `publisher`, `jn_title`, `authors`, `wc` (e.g. word count of the article), `doi` (extracted from the various identifiers), `doc_id` (our own custom id we will use as unique identifiers), and so on.
+
+From the given word count, we calculate that our corpus is around 656 million words. We do not have directly access to all these words, though. To access the full text, one must first take an arrangement with the JSTOR DfR team. And that is exactly what I did for my master thesis. My interaction with them was nice, and within a few weeks they gave me access to over 13G of text data. Unfortunately, you get the raw data from their Optical Character Recognition (OCR) algorithm, ran over their PDFs of varying shape and quality. To be honest, to clean that up is a mess and something I will keep for a later post. This is why we begin with exploring something nice and easy in the next post, namely the social structure hidden in coauthorship networks.
+
+### Network statistics
+
+Now, we describe our networks with some basic statistics:
+
+```{r load dat, echo=FALSE}
+d <- vroom::vroom(here("static", "all_journals_prep.tsv.gz"))
+
+all_coauthorship_adj <- vroom::vroom(here("static", "all_coauthorships_040121.tsv.gz")) %>%
+  filter(pub_year != 2020)
+
+# Keep a list of journal names
+list_journals <- unique(all_coauthorship_adj$journal_title)
+```
+
+```{r tidy dat, echo=FALSE}
+# Tidy data to have one row by author
+tidy_d <- d %>%
+  mutate(authors = str_split(authors, ", ")) %>%
+  unnest(c(authors))
+```
+
+```{r summarize table, echo=FALSE}
+# get all networks
+all_gs <- map(.x = list_journals, ~make_simplified_g(all_coauthorship_adj, jn = .x))
+
+count_avg_team <- tidy_d %>%
+  filter(pub_year > 1925) %>%
+  mutate(half_decade = pub_year - pub_year %% 3) %>%
+  count(id, jn_title, half_decade) %>%
+  group_by(jn_title, half_decade) %>%
+  summarise(mean_authors = mean(n))
+
+# count authors by paper by journal
+avg_team_jns <- count_avg_team %>%
+  summarise(authors_by_paper = round(mean(mean_authors),2))
+
+# count papers by author by journal
+avg_paper_by_authors <- count(tidy_d, authors, jn_title) %>%
+  group_by(jn_title) %>%
+  summarise(papers_by_author = round(mean(n),2))
+
+# extract range publication years for each journal
+lifespan <- calc_lifespan(tidy_d)
+
+# generate summary table for each journal
+summary_gs <- map_dfr(.x = 1:length(all_gs), ~summarise_g(all_gs[[.x]]))
+
+# put everything together
+summary_table <- summary_gs %>%
+  left_join(avg_team_jns) %>%
+  left_join(avg_paper_by_authors) %>%
+  left_join(lifespan)
+
+knitr::kable(summary_table)
+```
+Detailed description of these features can be found in [@newman_coauthorship_2004], but we briefly go over them:
+
+-   `clustering coefficient (c; transitivity) :` the density of triangles in the network, i.e. is the friend of my friend is also my friend? For example, _Ecological monographs_ has a transitivity of `r subset(summary_table, jn_title == "Ecological Monographs")$c` whereas _Methods in Ecology and Evolution_ is `r subset(summary_table, jn_title == "Methods in Ecology and Evolution")$c` meaning that in the first journal friends of your friends tend to know each other more than in the later.
+-   `degree assortativity (r) :` Also called the degree correlation for the networks, assortativity is the correlation coefficient for the number of collaborators that coauthors have, i.e. do people with many coauthors tend to also be connected together.
+-   `largest component (S) :` the fraction of authors found in the largest component. I also have calculated the corresponding number of edges in this component (`edges_S`), as well as the top 10 components (`edges_top10_S`). This is relevant because it prov
+-   `diameter :` from [igraph](https://igraph.org/r/doc/diameter.html), the diameter is the length of the longest geodesic.
+
+The above table is rich in information. It is best to visualize it:
+
+```{r GGally all measures, message=FALSE, warning=FALSE, echo=FALSE}
+summary_table %>%
+  mutate(nodes_log = log(nodes), edges_log = log(edges)) %>%
+  GGally::ggpairs(columns = c("nodes_log", "edges_log", "mean_degree", "r", "diameter", "S"),
+                  upper = list(continuous = GGally::wrap("cor", family="sans")),
+                  lower = list(continuous = "smooth", combo = "facetdensity")
+                  )
+```
+
+Although we could do some star gazing here, we should be careful in interpreting these relationships. We have hundred years worth of data in here, and many scientific behaviors changed over time. Combining what we say in the previous table as well, we note the following about our journals:
+
+-   `Functional ecology :` 68% in the first component. Low assortativity. High mean of authors by paper. Average diameter. We note on the plot the outlier around an individual who would have collaborated with 1000 people.
+-   `Ecology :` Highest assortativity of all (0.68). 68K edges.
+-   `Science`: best power-law fit. Second highest assortativity.
+-   `Ecological Monographs :` Few papers by authors. Smallest first component and diameter (13% and a diameter equals to 9).
+-   `Methods in Ecology and Evolution :` Black sheep. 97% in the first component! On average 5.35 authors by paper. Slightly negative assortativity
+-   `Proceedings of the Royal Society B :` Many edges (104K). Perhaps the categorization of JSTOR is not restrictive enough.
+
+To best appreciate the long tail distribution underlying the mean numbers of papers and coauthors, we give each of them an axis and produce a log-log plot:
+
+```{r count all authors, message=FALSE, warning=FALSE, echo=FALSE}
+# count_all_authors <- tidy_d %>% 
+#   filter(jn_title != "Ecological Bulletins") %>% 
+#   count(jn_title, id, name = "n_authors") %>% 
+#   count(jn_title, n_authors, sort=TRUE)
+# 
+# count_all_authors %>% 
+#   mutate(jn_title = case_when(
+#     jn_title == list_journals[1] ~ "Behavioral Eco",
+#     jn_title == list_journals[5] ~ "Frontiers in Eco",
+#     jn_title == list_journals[11] ~ "Methods in Eco",
+#     jn_title == list_journals[14] ~ "Royal Soc. B",
+#     TRUE ~ jn_title
+#   )) %>% 
+#   ggplot(aes(n_authors, n)) + 
+#   geom_point(size=0.4) +
+#   scale_x_log10() + 
+#   scale_y_log10(breaks = scales::trans_breaks("log10", function(x) 10^x),
+#                 limits = c(1, 1e4),
+#                 labels = scales::trans_format("log10", scales::math_format(10^.x))) +
+#   geom_smooth(method = "lm", linetype = "dashed", size = 0.5, se = FALSE) +
+#   annotation_logticks(size = 0.5, alpha = 0.3) +
+#   facet_wrap(~jn_title, ncol = 4) +
+#   ylab("number of authors with k collab") +
+#   xlab("number of collaborators") 
+```
+
+
+
+On that, thanks for reading and I will see you later!
