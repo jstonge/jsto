@@ -30,9 +30,9 @@ interests:
 - Bayesian Modeling
 - Data visualization, visual essays, interactive articles
 organizations:
-- name: Centre Marc Bloch
-  url: https://cmb.hu-berlin.de/
-role: Intern CMB Computational Social Science team
+- name: University of Vermont
+  url: https://joint-lab.github.io/
+role:  Ph.D. in Data Science and Complex Systems 
 social:
 - icon: envelope
   icon_pack: fas
@@ -50,4 +50,4 @@ superuser: true
 title: Jonathan St-Onge
 ---
 
-I am currently doing an internship at Centre Marc Bloch in Berlin. I am interested in computational social science and literate programming. 
+I am a first year Ph.D. student at UVM Complex Systems Center in Burlington. I am interested in computational social science, cultural evolution and literate programming. 
