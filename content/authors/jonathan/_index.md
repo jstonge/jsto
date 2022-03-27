@@ -30,9 +30,11 @@ interests:
 - Bayesian Modeling
 - Data visualization, visual essays, interactive articles
 organizations:
-- name: University of Vermont
+- name: UVM Complex Systems Center
+  url: https://vermontcomplexsystems.org/
+- name: Joint-lab
   url: https://joint-lab.github.io/
-role:  Ph.D. in Data Science and Complex Systems 
+role:  Ph.D. candidate in Data Science and Complex Systems 
 social:
 - icon: envelope
   icon_pack: fas
