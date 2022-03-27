@@ -13,6 +13,9 @@ superuser: true
 bio: A former philosopher of science and cognitive scientist, Jonathan St-Onge now purses his interest in computational social science.
 education:
   courses:
+  - course: PhD Complex Systems and Data Science
+    instutition: University of Vermont
+    year: 2021-present
   - course: M.A. Philosophy and cognitive science
     institution: Université du Québec à Montréal
     year: 2017
