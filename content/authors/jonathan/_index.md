@@ -37,6 +37,8 @@ organizations:
   url: https://vermontcomplexsystems.org/
 - name: Joint-lab
   url: https://joint-lab.github.io/
+- name: VERSO UVM OPEN SOURCE PROGRAM OFFICE
+  url: https://vermontcomplexsystems.org/education/verso/
 role:  Ph.D. candidate in Data Science and Complex Systems 
 social:
 - icon: envelope
